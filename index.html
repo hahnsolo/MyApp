@@ -11,7 +11,10 @@
         document.addEventListener("deviceready", onDeviceReady, false);
 
         function onDeviceReady() 
-         $("#latlong").append('<p> In the device ready </p>');
+        $( "#latlong" ).click(function() 
+         {
+            navigator.notification.beep(8);
+         });
             navigator.geolocation.getCurrentPosition(onSuccess, onError);
              var onSuccess = function(position) 
             {
@@ -40,7 +43,7 @@
 
 <body>
     <section id ="latlong">
-
+            World
     </section>
 </body>
 
