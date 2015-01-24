@@ -16,7 +16,7 @@
 
     <feature name="http://api.phonegap.com/1.0/device" />
     <gap:plugin name="org.apache.cordova.dialogs" version="0.2.10" />    
-
+    <gap:plugin name="org.apache.cordova.geolocation" version="0.3.10" />
         
         
         
