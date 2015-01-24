@@ -1,12 +1,14 @@
 <html>
 
 <head>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8">
+
         
-        function onLoad() {
-            document.addEventListener("deviceready", onDeviceReady, false);
-        }
+        document.addEventListener("deviceready", onDeviceReady, false);
 
         function onDeviceReady() 
         
@@ -21,6 +23,7 @@
                 'Heading: '           + position.coords.heading           + '\n' +
                 'Speed: '             + position.coords.speed             + '\n' +
                 'Timestamp: '         + position.timestamp                + '\n');
+                $("#latlong").append('<p> Hello your lattitude is : '+position.latitude+'</p>');
             };
 
 // onError Callback receives a PositionError object
@@ -34,8 +37,10 @@
     </script>
 </head>
 
-<body onload="onLoad()">
+<body>
+    <section id ="latlong">
 
+    </section>
 </body>
 
 </html>
