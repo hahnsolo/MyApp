@@ -2,9 +2,6 @@
 
     <head>
     
-        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
-        <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-        <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
         <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
         <script type="text/javascript" charset="utf-8">
     
@@ -12,11 +9,17 @@
 
         function onDeviceReady() 
         {
-        
-        $("#latlong").text("Hello world!");
-        $("#latlong").vclick(function(){
-        $("#latlong").text("Hello world!");
-        
+            
+               document.getElementById("latlong").addEventListener("click", latlong); 
+               
+               function latlong()
+               {
+
+                var parent = document.getElementById("latlong"); 
+                var child = document.getElementsByClassName("text");
+                parent.removeChild(child[0]);    
+
+               } 
         }
         
         </script>
@@ -26,7 +29,9 @@
     <body>
         
         <section id ="latlong">
-                World
+                <section id="text" class="text">
+                    World
+                </section>
         </section>
     </body>
 
