@@ -12,11 +12,8 @@
 
         function onDeviceReady() 
 
-        $( "#latlong").append("<strong>World</strong>");
-        $( "#latlong" ).click(function() 
-         {
-            navigator.notification.beep(8);
-         });
+         $("#latlong").vclick(function(){
+         $("#latlong").text("Hello world!");
         
             navigator.geolocation.getCurrentPosition(onSuccess, onError);
              var onSuccess = function(position) 
