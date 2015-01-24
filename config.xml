@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns   = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        id          = "com.greenseedmusic.com.test1"
+        versionCode = "10" 
+        version     = "1.0.0" >
+    <name>HahnProject</name>
+
+    <description>
+        playing around with splash screens 
+    </description>
+
+    <author href="http://greenseedmusic.com" email="soundsgood@greenseedmusic.com">
+        hahnsolo 
+    </author>
+
+    <feature name="http://api.phonegap.com/1.0/device" />
+    
+    <gap:plugin name="org.apache.cordova.dialogs" version="0.2.10" />    
+
+        
+        
+        
+</widget>

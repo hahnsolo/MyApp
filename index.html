@@ -1,0 +1,22 @@
+<html>
+
+<head>
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+        
+        function onLoad() {
+            document.addEventListener("deviceready", onDeviceReady, false);
+        }
+
+        function onDeviceReady() {
+            navigator.notification.alert("The Page Has Loaded", alertCallback, "SysLoad", "Thanks")        
+            function afterCallBack(){}
+        }
+    </script>
+</head>
+
+<body onload="onLoad()">
+
+</body>
+
+</html>
