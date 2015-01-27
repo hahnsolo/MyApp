@@ -4,7 +4,7 @@
         id          = "com.greenseedmusic.com.test1"
         versionCode = "10" 
         version     = "1.0.0" >
-    <name>HahnProject</name>
+    <name>HahnPark</name>
 
     <description>
         playing around with splash screens 
@@ -15,8 +15,8 @@
     </author>
 
     <feature name="http://api.phonegap.com/1.0/device" />
-    <feature name="Geolocation" />
-    <gap:plugin name="org.apache.cordova.geolocation" />
+   
+    <gap:plugin name="org.apache.cordova.geolocation" version="0.3.10" />
     <gap:plugin name="org.apache.cordova.dialogs" version="0.2.10" />    
     <gap:plugin name="org.apache.cordova.geolocation" version="0.3.10" />
      <icon src="park.png"/>
