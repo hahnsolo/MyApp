@@ -22,8 +22,14 @@
                     long = position.coords.longitude  
                     var parent = document.getElementById("stuff"); 
                     var child = document.getElementsByClassName("text");
-                    parent.removeChild(child[0]);  
-                    alert(lat + long);
+                    parent.removeChild(child[0]); 
+                    var h = document.createElement("H1")                // Create a <h1> element
+                    var t = document.createTextNode("Find My Car");
+                    t.className = "newparkcar";
+                    h.appendChild(t);
+                    parent.appendChild(h);
+                    document.getElementById("newparkcar").addEventListener("click",latlong);
+                    
                 }
 
                 function onError(error)
