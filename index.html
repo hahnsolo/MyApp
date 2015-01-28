@@ -17,14 +17,14 @@
                    
                     function onSuccess(position)
                     {
-                    var parent = document.getElementById("latlong"); 
-                    var child = document.getElementsByClassName("text");
-                    parent.removeChild(child[0]);  
+                    //var parent = document.getElementById("latlong"); 
+                    //var child = document.getElementsByClassName("text");
+                    //parent.removeChild(child[0]);  
                     
-                //var element = document.getElementById('geolocation');
-                //element.innerHTML = 'Latitude: '  + position.coords.latitude      + '<br />' +
-                  //      'Longitude: ' + position.coords.longitude     + '<br />' +
-                    //    '<hr />'      + element.innerHTML;
+                     var element = document.getElementById('text');
+                     element.innerHTML = 'Latitude: '  + position.coords.latitude      + '<br />' +
+                    'Longitude: ' + position.coords.longitude     + '<br />' +
+                    '<hr />'      + element.innerHTML;
                     }
 
                     function onError(error) 
