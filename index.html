@@ -5,13 +5,34 @@
         <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
         <script type="text/javascript" charset="utf-8">
     
+        var lat;
+        var long;
+        
         document.addEventListener("deviceready", onDeviceReady, false);
 
         function onDeviceReady() 
-        {
+        { 
+            document.getElementById("parkcarr").addEventListener("click",getcar);
             
-               document.getElementById("latlong").addEventListener("click", latlong); 
-               
+            function getcar()
+            {
+                var onSuccess = function(position) 
+                {
+                    lat = position.coords.latitude     
+                    long = position.coords.longitude  
+                    var parent = document.getElementById("stuff"); 
+                    var child = document.getElementsByClassName("text");
+                    parent.removeChild(child[0]);  
+                }
+
+                function onError(error)
+                {
+                alert('code: '    + error.code    + '\n' +
+                'message: ' + error.message + '\n');
+                }
+                navigator.geolocation.getCurrentPosition(onSuccess, onError);    
+            }
+            
                function latlong()
                {
                    
@@ -44,9 +65,9 @@
 
     <body>
         
-        <section id ="latlong">
-                <section id="text" class="text">
-                    World
+        <section id ="stuff">
+                <section id="parkcar" class="text">
+                    Park My Car 
                 </section>
         </section>
     </body>
