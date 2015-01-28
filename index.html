@@ -51,7 +51,7 @@
                     
                         
                      var element = document.getElementById('newparkcar');
-                     element.innerHTML = position.latitude +"" +position.longitude; 
+                     element.innerHTML = getDistanceFromLatLonInKm(lat,long,position.coords.latitude,position.coords.longitude) 
                     }
 
                     function onError(error) 
