@@ -25,7 +25,7 @@
                     parent.removeChild(child[0]); 
                     var h = document.createElement("H1")                // Create a <h1> element
                     var t = document.createTextNode("Find My Car");
-                    t.id = "newparkcar";
+                    h.id = "newparkcar";
                     h.appendChild(t);
                     parent.appendChild(h);
                     document.getElementById("newparkcar").addEventListener("click",latlong);
