@@ -42,17 +42,17 @@
             
                function latlong()
                {
-                   
+                   alert("Yours in here");
                     function onSuccess(position)
                     {
                     //var parent = document.getElementById("latlong"); 
                     //var child = document.getElementsByClassName("text");
                     //parent.removeChild(child[0]);  
                     
-                     var element = document.getElementById('text');
+                     var element = document.getElementById('newparkcar');
                      element.innerHTML = 'Latitude: '  + position.coords.latitude      + '<br />' +
                     'Longitude: ' + position.coords.longitude     + '<br />' +
-                    '<hr />'      + element.innerHTML;
+                    '<hr />';
                     }
 
                     function onError(error) 
