@@ -1,100 +1,90 @@
 <html>
 
-    <head>
-    
-        <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-        <script type="text/javascript" charset="utf-8">
-    
+<head>
+
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
         var lat;
         var long;
 
-        
+
         document.addEventListener("deviceready", onDeviceReady, false);
 
-        function onDeviceReady() 
-        { 
-            document.getElementById("parkcar").addEventListener("click",saveCarLocation);
+        function onDeviceReady() {
+            document.getElementById("parkcar").addEventListener("click", saveCarLocation);
 
-            function saveCarLocation()
-            {   
-                var onSuccess = function(position) 
-                {
-                    
-                    lat = position.coords.latitude;     
+            function saveCarLocation() {
+                var onSuccess = function (position) {
+
+                    lat = position.coords.latitude;
                     long = position.coords.longitude;
-                     alert("after the chirds");
-                    var parent = document.getElementById("stuff"); 
+                    var parent = document.getElementById("stuff");
                     var child = document.getElementsByClassName("text");
-                
-                    parent.removeChild(child[0]); 
-                    var h = document.createElement("H1")                // Create a <h1> element
+
+                    parent.removeChild(child[0]);
+                    var h = document.createElement("H1") // Create a <h1> element
                     var t = document.createTextNode("Find My Car");
                     h.id = "newparkcar";
                     h.appendChild(t);
                     parent.appendChild(h);
-                    document.getElementById("newparkcar").addEventListener("click",returnCarLocation);
-                   
+                    document.getElementById("newparkcar").addEventListener("click", returnCarLocation);
+
                 }
 
-                function onError(error)
-                {
-                        alert('code: '    + error.code    + '\n' +
-                      'message: ' + error.message + '\n');
+                function onError(error) {
+                    alert('code: ' + error.code + '\n' +
+                        'message: ' + error.message + '\n');
                 }
-                    navigator.geolocation.getCurrentPosition(onSuccess, onError);    
+                navigator.geolocation.getCurrentPosition(onSuccess, onError);
             }
-            
-               function returnCarLocation()
-                        
-               {
-                    function onSuccess(position)
-                    {
+
+            function returnCarLocation() {
+                function onSuccess(position) {
+                    alert("In The Lover");
                     //var parent = document.getElementById("latlong"); 
                     //var child = document.getElementsByClassName("text");
                     //parent.removeChild(child[0]);  
-                        
-                    
-                        
-                     var element = document.getElementById('newparkcar');
-                     element.innerHTML = (getDistanceFromLatLonInKm(lat,long,position.coords.latitude,position.coords.longitude) /0.0010000) 
-                    }
 
-                    function onError(error) 
-                    {
-                        alert('code: '    + error.code    + '\n' +
+
+
+                    var element = document.getElementById('newparkcar');
+                    element.innerHTML = (getDistanceFromLatLonInKm(lat, long, position.coords.latitude, position.coords.longitude) / 0.0010000)
+                }
+
+                function onError(error) {
+                    alert('code: ' + error.code + '\n' +
                         'message: ' + error.message + '\n');
-                    }
-                     
-                    function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2)
-                    {
-                        var R = 6371; // Radius of the earth in km
-                        var dLat = deg2rad(lat2-lat1);  // deg2rad below
-                        var dLon = deg2rad(lon2-lon1); 
-                        var a = 
-                            Math.sin(dLat/2) * Math.sin(dLat/2) +-
+                }
 
-                    function deg2rad(deg)
-                    {
-                            return deg * (Math.PI/180)
-                    }    
-                    
-                    var watchID = navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 30000 });     
+                function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
+                    var R = 6371; // Radius of the earth in km
+                    var dLat = deg2rad(lat2 - lat1); // deg2rad below
+                    var dLon = deg2rad(lon2 - lon1);
+                    var a =
+                        Math.sin(dLat / 2) * Math.sin(dLat / 2) + -
 
-                    }
-               }
+                        function deg2rad(deg) {
+                            return deg * (Math.PI / 180)
+                        }
+
+                    var watchID = navigator.geolocation.watchPosition(onSuccess, onError, {
+                        timeout: 30000
+                    });
+
+                }
+            }
         }
-        
-        </script>
-    
-    </head>
+    </script>
 
-    <body>
-        
-        <section id ="stuff">
-                <section id="parkcar" class="text">
-                    Park My Car 
-                </section>
+</head>
+
+<body>
+
+    <section id="stuff">
+        <section id="parkcar" class="text">
+            Park My Car
         </section>
-    </body>
+    </section>
+</body>
 
 </html>
