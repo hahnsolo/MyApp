@@ -7,8 +7,12 @@
     <name>HahnPark</name>
 
     <description>
-        playing around with splash screens 
+        Parking Apps 
     </description>
+
+    <platform name="android">
+        <preference name="Fullscreen" value="true" />
+    </platform>
 
     <author href="http://greenseedmusic.com" email="soundsgood@greenseedmusic.com">
         hahnsolo 
