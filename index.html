@@ -14,15 +14,18 @@
         function onDeviceReady() 
         { 
             document.getElementById("parkcar").addEventListener("click",saveCarLocation);
-            
+             alert("In the save location");
             function saveCarLocation()
-            {
+            {    alert("In the save location first clicked");
                 var onSuccess = function(position) 
                 {
+                     alert("before the chords ");
                     lat = position.coords.latitude     
-                    long = position.coords.longitude  
+                    long = position.coords.longitude
+                    alert("after the chirds");
                     var parent = document.getElementById("stuff"); 
                     var child = document.getElementsByClassName("text");
+                alert("after the grabs");
                     parent.removeChild(child[0]); 
                     var h = document.createElement("H1")                // Create a <h1> element
                     var t = document.createTextNode("Find My Car");
@@ -30,7 +33,7 @@
                     h.appendChild(t);
                     parent.appendChild(h);
                     document.getElementById("newparkcar").addEventListener("click",returnCarLocation);
-                    alert("In Me");
+                   
                 }
 
                 function onError(error)
