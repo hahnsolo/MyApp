@@ -15,12 +15,10 @@
 
             function saveCarLocation() {
                 var onSuccess = function (position) {
-
                     lat = position.coords.latitude;
                     long = position.coords.longitude;
                     var parent = document.getElementById("stuff");
                     var child = document.getElementsByClassName("text");
-
                     parent.removeChild(child[0]);
                     var h = document.createElement("H1") // Create a <h1> element
                     var t = document.createTextNode("Find My Car");
@@ -28,7 +26,6 @@
                     h.appendChild(t);
                     parent.appendChild(h);
                     document.getElementById("newparkcar").addEventListener("click", returnCarLocation);
-
                 }
 
                 function onError(error) {
@@ -39,14 +36,12 @@
             }
 
             function returnCarLocation() {
+                    alert("In The Lover");
                 function onSuccess(position) {
                     alert("In The Lover");
                     //var parent = document.getElementById("latlong"); 
                     //var child = document.getElementsByClassName("text");
                     //parent.removeChild(child[0]);  
-
-
-
                     var element = document.getElementById('newparkcar');
                     element.innerHTML = (getDistanceFromLatLonInKm(lat, long, position.coords.latitude, position.coords.longitude) / 0.0010000)
                 }
