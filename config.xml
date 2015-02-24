@@ -11,11 +11,13 @@
     <platform name="android">
         <preference name="Fullscreen" value="true" />
     </platform>
+    
 
     <author href="http://greenseedmusic.com" email="soundsgood@greenseedmusic.com">
         Chris Romanyk GitHub - @hahnsolo Twitter - @heyhahn
     </author>
-
+    
+    <gap:platform name="android" />
     <gap:plugin name="org.apache.cordova.geolocation" version="0.3.10" />
     <gap:plugin name="org.apache.cordova.dialogs" version="0.2.10" />
     <gap:plugin name="fi.avaus.cordova.geolocation" version="0.3.11" />
